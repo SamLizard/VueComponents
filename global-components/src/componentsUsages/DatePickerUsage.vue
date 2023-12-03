@@ -5,10 +5,9 @@
         <date-picker
           v-model="date"
           :allowedDates="isAllowedDate"
-          :rules="testRules"
+          :rules="requiredRules"
           iconColor="#53A5EB"
         />
-        {{date}}
       </v-col>
     </v-row>
   </v-container>
@@ -27,7 +26,7 @@ export default {
   data() {
     return {
       date: new Date().toISOString().substring(0, 10),
-      testRules: [(v) => !!v || "required"],
+      requiredRules: [(v) => !!v || "required"],
     };
   },
   methods: {
