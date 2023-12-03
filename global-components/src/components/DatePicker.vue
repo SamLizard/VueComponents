@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- <v-container>
-    <v-row>
-      <v-col cols="12" lg="6"> -->
     <v-menu
       v-model="menu"
       :close-on-content-click="false"
@@ -13,7 +10,6 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
-          v-model="date"
           :label="label"
           :placeholder="placeholder"
           append-icon="mdi-calendar"
@@ -36,24 +32,20 @@
             <v-icon :color="iconColor">event</v-icon>
           </template>
         </v-text-field>
-        <!-- hint="MM/DD/YYYY format"
-              persistent-hint -->
       </template>
       <v-date-picker
         v-model="date"
-        @input="menu = false"
+        @input="close"
         no-title
         :locale="language"
         :first-day-of-week="languageFirstDayOfWeek"
         :min="min"
         :max="max"
         :allowed-dates="allowedDates"
+        :show-adjacent-months="showAdjacentMonths"
       ></v-date-picker>
     </v-menu>
   </div>
-  <!-- </v-col>
-    </v-row>
-  </v-container> -->
 </template>
 
 <script>
@@ -67,6 +59,10 @@ export default {
   name: "DatePicker",
   components: {},
   props: {
+    value: {
+      type: String,
+      default: new Date().toISOString().substring(0, 10),
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -75,9 +71,13 @@ export default {
       type: String,
       default: "en",
     },
+    showAdjacentMonths: {
+      type: Boolean,
+      default: true,
+    },
     iconColor: {
       type: String,
-      required: "false"
+      required: false,
     },
     color: {
       type: String,
@@ -86,7 +86,6 @@ export default {
     bgColor: {
       type: String,
       required: false,
-      // default: "warning",
     },
     rounded: {
       type: Boolean,
@@ -119,7 +118,7 @@ export default {
     min: {
       type: String,
       required: false,
-      // default: (new Date()).toISOString().substr(0, 10)
+      // default: (new Date()).toISOString().substring(0, 10)
     },
     max: {
       type: String,
@@ -137,7 +136,7 @@ export default {
   },
   data() {
     return {
-      date: new Date().toISOString().substr(0, 10),
+      date: new Date().toISOString().substring(0, 10),
       dateFormatted: Date,
       menu: false,
     };
@@ -147,15 +146,16 @@ export default {
       return this.formatDate(this.date);
     },
     languageFirstDayOfWeek() {
-      return languageSettings[this.language] === undefined
-        ? 0
-        : languageSettings[this.language];
+      return languageSettings[this.language] ?? 0;
     },
   },
   watch: {
-    date(val) {
-      this.date = val;
-      this.dateFormatted = this.formatDate(this.date);
+    value: {
+      immediate: true,
+      handler(newVal) {
+        this.date = newVal;
+        this.dateFormatted = this.formatDate(this.date);
+      },
     },
   },
   methods: {
@@ -163,13 +163,17 @@ export default {
       if (!date) return null;
 
       const [year, month, day] = date.split("-");
-      return `${month}/${day}/${year}`;
+      return `${day}/${month}/${year}`;
     },
     parseDate(date) {
       if (!date) return null;
 
-      const [month, day, year] = date.split("/");
+      const [day, month, year] = date.split("/");
       return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+    },
+    close() {
+      this.$emit("input", this.date);
+      this.menu = false;
     },
   },
 };

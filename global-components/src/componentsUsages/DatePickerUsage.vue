@@ -8,6 +8,7 @@
           :rules="testRules"
           iconColor="#53A5EB"
         />
+        {{date}}
       </v-col>
     </v-row>
   </v-container>
@@ -25,7 +26,7 @@ export default {
   },
   data() {
     return {
-      date: new Date(),
+      date: new Date().toISOString().substring(0, 10),
       testRules: [(v) => !!v || "required"],
     };
   },
