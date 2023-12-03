@@ -31,7 +31,11 @@
           :filled="filled"
           :rules="rules"
           hide-details="auto"
-        ></v-text-field>
+        >
+          <template v-if="iconColor !== undefined" v-slot:append>
+            <v-icon :color="iconColor">event</v-icon>
+          </template>
+        </v-text-field>
         <!-- hint="MM/DD/YYYY format"
               persistent-hint -->
       </template>
@@ -70,6 +74,10 @@ export default {
     language: {
       type: String,
       default: "en",
+    },
+    iconColor: {
+      type: String,
+      required: "false"
     },
     color: {
       type: String,

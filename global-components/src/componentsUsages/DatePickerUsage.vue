@@ -6,6 +6,7 @@
           v-model="date"
           :allowedDates="isAllowedDate"
           :rules="testRules"
+          iconColor="#53A5EB"
         />
       </v-col>
     </v-row>
