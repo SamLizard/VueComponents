@@ -10,22 +10,14 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
-          :label="label"
-          :placeholder="placeholder"
+          v-bind="[$attrs, attrs]"
           append-icon="mdi-calendar"
           readonly
-          v-bind="attrs"
           v-on="on"
           :value="computedDateFormatted"
-          :disabled="disabled"
-          :color="color"
-          :background-color="bgColor"
           :rounded="rounded"
           :dense="dense"
-          :solo="solo"
           :outlined="outlined"
-          :filled="filled"
-          :rules="rules"
           hide-details="auto"
         >
           <template v-if="iconColor !== undefined" v-slot:append>
@@ -57,15 +49,11 @@ const languageSettings = {
 
 export default {
   name: "DatePicker",
-  components: {},
+  inheritAttrs: false,
   props: {
     value: {
       type: String,
       default: new Date().toISOString().substring(0, 10),
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
     },
     language: {
       type: String,
@@ -76,14 +64,6 @@ export default {
       default: true,
     },
     iconColor: {
-      type: String,
-      required: false,
-    },
-    color: {
-      type: String,
-      required: false,
-    },
-    bgColor: {
       type: String,
       required: false,
     },
@@ -99,22 +79,6 @@ export default {
       type: Boolean,
       default: true,
     },
-    solo: {
-      type: Boolean,
-      default: false,
-    },
-    filled: {
-      type: Boolean,
-      default: false,
-    },
-    label: {
-      type: String,
-      required: false,
-    },
-    placeholder: {
-      type: String,
-      required: false,
-    },
     min: {
       type: String,
       required: false,
@@ -127,10 +91,6 @@ export default {
     },
     allowedDates: {
       type: Function,
-      required: false,
-    },
-    rules: {
-      type: Array,
       required: false,
     },
   },

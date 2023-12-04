@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="time-picker-root">
     <v-menu
       ref="menu"
       v-model="menu"
@@ -12,23 +12,15 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
+          v-bind="[$attrs, attrs]"
           v-model="time"
           :value="time"
-          :label="label"
           append-icon="mdi-clock-time-four-outline"
           readonly
-          v-bind="attrs"
           v-on="on"
-          :placeholder="placeholder"
-          :disabled="disabled"
-          :color="color"
-          :background-color="bgColor"
           :rounded="rounded"
           :dense="dense"
-          :solo="solo"
           :outlined="outlined"
-          :filled="filled"
-          :rules="rules"
           hide-details="auto"
         >
           <template v-if="iconColor !== undefined" v-slot:append>
@@ -51,8 +43,9 @@
 </template>
 
 <script>
-export default {
+export default {  
   name: "TimePicker",
+  inheritAttrs: false,
   props: {
     value: {
       type: String,
@@ -62,19 +55,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
     iconColor: {
-      type: String,
-      required: false,
-    },
-    color: {
-      type: String,
-      required: false,
-    },
-    bgColor: {
       type: String,
       required: false,
     },
@@ -89,26 +70,6 @@ export default {
     outlined: {
       type: Boolean,
       default: true,
-    },
-    solo: {
-      type: Boolean,
-      default: false,
-    },
-    filled: {
-      type: Boolean,
-      default: false,
-    },
-    label: {
-      type: String,
-      required: false,
-    },
-    placeholder: {
-      type: String,
-      required: false,
-    },
-    rules: {
-      type: Array,
-      required: false,
     },
     min: {
       type: String,
