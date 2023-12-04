@@ -27,7 +27,5 @@ export default {
       requiredRules: [(v) => !!v || "required"],
     };
   },
-  methods: {},
-  computed: {},
 };
 </script>

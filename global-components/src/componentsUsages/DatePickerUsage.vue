@@ -37,6 +37,5 @@ export default {
       return Object.values(allowedDaysInWeek).includes(dayOfWeek);
     },
   },
-  computed: {},
 };
 </script>
