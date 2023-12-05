@@ -106,7 +106,7 @@ export default {
       return this.formatDate(this.date);
     },
     languageFirstDayOfWeek() {
-      return languageSettings[this.language] ?? 0;
+      return languageSettings[this.language] ?? 0; // take it from i18n
     },
   },
   watch: {

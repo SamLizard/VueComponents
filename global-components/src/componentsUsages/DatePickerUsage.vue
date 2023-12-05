@@ -7,6 +7,7 @@
           :allowedDates="isAllowedDate"
           :rules="requiredRules"
           iconColor="#53A5EB"
+          :language="this.$i18n.locale"
         />
       </v-col>
     </v-row>

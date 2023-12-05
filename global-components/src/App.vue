@@ -13,5 +13,13 @@ export default {
   },
   methods: {},
   computed: {},
+  watch: {
+    '$i18n.locale': function() {
+      const newDirection = this.$t('dir') === 'rtl'
+      if (newDirection !== this.$vuetify.rtl) {
+        this.$vuetify.rtl = newDirection;
+      }
+    }
+  }
 }
 </script>

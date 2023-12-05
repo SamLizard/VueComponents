@@ -20,8 +20,7 @@ export default new Vuex.Store({
   actions: {
     changeUserId(context, newUserId) {
       context.commit('SET_USER_ID', newUserId);
-    }
+    },
   },
-  modules: {
-  }
+  modules: {}
 })
