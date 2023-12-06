@@ -1,4 +1,10 @@
 {
   "language": "Français",
-  "dir": "ltr"
+  "dir": "ltr",
+  "title": "Composantes Vue",
+  "salutation": "Salut",
+  "logout": "Déconnection",
+  "routes": {
+    "home": "Accueil"
+  }
 }

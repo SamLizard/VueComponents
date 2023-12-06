@@ -1,4 +1,10 @@
 {
   "language": "עברית",
-  "dir": "rtl"
+  "dir": "rtl",
+  "title": "קומפוננטות של ויו",
+  "salutation": "שלום",
+  "logout": "התנתקות",
+  "routes": {
+    "home": "בית"
+  }
 }

@@ -5,8 +5,11 @@
       item-text="text"
       item-value="lang"
       v-model="$i18n.locale"
+      hide-details="auto"
       flat
       solo
+      background-color="transparent"
+      type="hide"
     >
       <template v-slot:selection="{ item }">
         <v-img
@@ -14,7 +17,7 @@
           min-width="50px"
           max-width="50px"
         />
-        <div class="mx-2">
+        <div :class="'m' + ($t('dir') === 'ltr' ? 'l' : 'r') + '-2'">
           {{ $t("language") }}
         </div>
       </template>
@@ -48,3 +51,12 @@ export default {
   },
 };
 </script>
+<style scoped>
+.v-select /deep/ .v-select__selections input {
+    display: none;
+}
+
+.v-text-field /deep/ .v-input__append-inner {
+  padding: 0 !important;
+}
+</style>

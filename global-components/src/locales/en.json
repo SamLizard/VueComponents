@@ -1,4 +1,10 @@
 {
   "language": "English",
-  "dir": "ltr"
+  "dir": "ltr",
+  "title": "Vue Components",
+  "salutation": "Hi",
+  "logout": "Logout",
+  "routes": {
+    "home": "Home"
+  }
 }
