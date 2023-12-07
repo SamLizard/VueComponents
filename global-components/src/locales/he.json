@@ -6,5 +6,7 @@
   "logout": "התנתקות",
   "routes": {
     "home": "בית"
-  }
+  },
+  "cancel": "ביטול",
+  "proceed": "המשך"
 }

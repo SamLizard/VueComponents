@@ -6,5 +6,7 @@
   "logout": "Déconnection",
   "routes": {
     "home": "Accueil"
-  }
+  },
+  "cancel": "Annuler",
+  "proceed": "Procéder"
 }

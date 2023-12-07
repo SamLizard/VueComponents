@@ -6,5 +6,7 @@
   "logout": "Logout",
   "routes": {
     "home": "Home"
-  }
+  },
+  "cancel": "Cancel",
+  "proceed": "Proceed"
 }
