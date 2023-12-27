@@ -6,7 +6,7 @@
       </div>
       <div class="links">
         <v-btn
-          v-for="route in this.$router.getRoutes()"
+          v-for="route in $router.getRoutes()"
           :key="route.path"
           :color="route.path === $router.currentRoute.path ? 'primary' : ''"
           :to="route.path"

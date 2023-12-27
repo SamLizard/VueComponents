@@ -5,8 +5,16 @@
   "salutation": "שלום",
   "logout": "התנתקות",
   "routes": {
-    "home": "בית"
+    "home": "בית",
+    "components": "קומפוננטות"
   },
   "cancel": "ביטול",
-  "proceed": "המשך"
+  "proceed": "המשך",
+  "show": "פתיחה",
+  "popup": "פופאפ",
+  "regularPopup": "פופאפ רגיל",
+  "sweetalertPopup": "Sweetalert פופאפ",
+  "confirmationQuestion": "אתה בטוח?",
+  "deleted": "נמחק",
+  "deletedFileMessage": "הקובץ שלך נמחק."
 }

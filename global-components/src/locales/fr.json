@@ -5,8 +5,16 @@
   "salutation": "Salut",
   "logout": "Déconnection",
   "routes": {
-    "home": "Accueil"
+    "home": "Accueil",
+    "components": "Composantes"
   },
   "cancel": "Annuler",
-  "proceed": "Procéder"
+  "proceed": "Procéder",
+  "show": "Ouvrir",
+  "popup": "Popup",
+  "regularPopup": "Popup Normale",
+  "sweetalertPopup": "Popup Sweetalert",
+  "confirmationQuestion": "Êtes vous sûrs?",
+  "deleted": "Supprimé",
+  "deletedFileMessage": "Votre fichier a été supprimé."
 }

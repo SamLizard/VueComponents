@@ -101,10 +101,10 @@ export default {
       this.isVisible = false;
     },
   },
-  setup(props, ctx) {
-    const parentSlots = computed(() => Object.keys(ctx.slots));
-    return { parentSlots };
-  },
+  // setup(props, ctx) {
+  //   const parentSlots = computed(() => Object.keys(ctx.slots));
+  //   return { parentSlots };
+  // },
 };
 </script>
 <style scoped>

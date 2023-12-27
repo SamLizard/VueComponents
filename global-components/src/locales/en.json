@@ -5,8 +5,16 @@
   "salutation": "Hi",
   "logout": "Logout",
   "routes": {
-    "home": "Home"
+    "home": "Home",
+    "components": "Components"
   },
   "cancel": "Cancel",
-  "proceed": "Proceed"
+  "proceed": "Proceed",
+  "show": "Show",
+  "popup": "Popup",
+  "regularPopup": "Regular Popup",
+  "sweetalertPopup": "Sweetalert Popup",
+  "confirmationQuestion": "Are you sure?",
+  "deleted": "Deleted",
+  "deletedFileMessage": "Your file has been deleted."
 }
