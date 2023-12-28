@@ -64,23 +64,17 @@
 
 <script>
 import { register } from "../DL/DL.js";
+import validationRulesMixin from '../mixins/validationRulesMixin';
 
 export default {
   name: "RegisterView",
   components: {},
+  mixins: [validationRulesMixin],
   data() {
     return {
       userDetails: { username: "", password: "", phone: "" },
       showPassword: false,
       valid: false,
-      usernameRules: [
-        (v) => !!v || this.$t("fieldRequired"),
-        (v) => (v && v.length <= 12) || this.$t("usernameLengthMessage"),
-      ],
-      passwordRules: [
-        (v) => !!v || this.$t("fieldRequired"),
-        (v) => (v && v.length <= 40) || this.$t("passwordLengthMessage"),
-      ],
       phoneRules: [
         (v) => !!v || this.$t("fieldRequired"),
         (v) => (v && /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(v)) || this.$t("phoneIncorrectMessage"),

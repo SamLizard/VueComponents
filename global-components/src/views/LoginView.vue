@@ -101,24 +101,18 @@
 
 <script>
 import { login } from "../DL/DL.js";
+import validationRulesMixin from '../mixins/validationRulesMixin.js';
 
 export default {
   name: "LoginView",
   components: {},
+  mixins: [validationRulesMixin],
   data() {
     return {
       username: "",
       password: "",
       showPassword: false,
       valid: false,
-      usernameRules: [
-        (v) => !!v || this.$t("fieldRequired"),
-        (v) => (v && v.length <= 12) || this.$t("usernameLengthMessage"),
-      ],
-      passwordRules: [
-        (v) => !!v || this.$t("fieldRequired"),
-        (v) => (v && v.length <= 40) || this.$t("passwordLengthMessage"),
-      ],
     };
   },
   methods: {
