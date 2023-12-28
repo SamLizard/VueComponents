@@ -27,8 +27,8 @@
   "passwordLengthMessage": "Password must be less than 40 characters",
   "fieldRequired": "This field is required",
   "phoneIncorrectMessage": "The phone number is incorrect",
-  "registerQuestion": "Don't have an account? register",
-  "loginQuestion": "Already have an account? log in",
+  "registerQuestion": "Don't have an account? Register",
+  "loginQuestion": "Already have an account? Log in",
   "details": {
     "title": "Your informations",
     "name": "Name",

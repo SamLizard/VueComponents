@@ -39,7 +39,7 @@
                       :disabled="!valid"
                       color="primary"
                       @click="submitForm"
-                      >{{ $t("routes.login") }}</v-btn
+                      >{{ $t("routes.register") }}</v-btn
                     >
                   </v-col>
                   <v-col cols="12">
