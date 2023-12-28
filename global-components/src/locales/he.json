@@ -6,6 +6,8 @@
   "logout": "התנתקות",
   "routes": {
     "home": "בית",
+    "login": "התחברות",
+    "register": "הרשמה",
     "components": "קומפוננטות"
   },
   "cancel": "ביטול",
@@ -17,5 +19,19 @@
   "sweetalertPopup": "Sweetalert פופאפ",
   "confirmationQuestion": "אתה בטוח?",
   "deleted": "נמחק",
-  "deletedFileMessage": "הקובץ שלך נמחק."
+  "deletedFileMessage": "הקובץ שלך נמחק.",
+  "username": "שם משתמש",
+  "password": "סיסמה",
+  "phone": "טלפון",
+  "usernameLengthMessage": "שם המשתמש חייב להיות פחות מ-12 תווים",
+  "passwordLengthMessage": "הסיסמה חייבת להיות פחות מ-40 תווים",
+  "fieldRequired": "שדה זה נדרש",
+  "phoneIncorrectMessage": "מספר הטלפון שגוי",
+  "registerQuestion": "אין לך חשבון? הרשם",
+  "loginQuestion": "יש לך כבר חשבון? הכנס",
+  "details": {
+    "title": "המידע שלך",
+    "name": "שם",
+    "phone": "מספר טלפון"
+  }
 }

@@ -6,16 +6,32 @@
   "logout": "Déconnection",
   "routes": {
     "home": "Accueil",
+    "login": "Connection",
+    "register": "Inscription",
     "components": "Composantes"
   },
   "cancel": "Annuler",
   "proceed": "Procéder",
-  "ok": "ok",
+  "ok": "OK",
   "show": "Ouvrir",
   "popup": "Popup",
   "regularPopup": "Popup Normale",
   "sweetalertPopup": "Popup Sweetalert",
   "confirmationQuestion": "Êtes vous sûrs?",
   "deleted": "Supprimé",
-  "deletedFileMessage": "Votre fichier a été supprimé."
+  "deletedFileMessage": "Votre fichier a été supprimé.",
+  "username": "Nom d'utilisateur",
+  "password": "Mot de passe",
+  "phone": "Téléphone",
+  "usernameLengthMessage": "Le nom d'utilisateur doit contenir moins de 12 caractères",
+  "passwordLengthMessage": "Le mot de passe doit contenir moins de 40 caractères",
+  "fieldRequired": "Ce champ est obligatoir",
+  "phoneIncorrectMessage": "Le numéro de téléphone est incorrect",
+  "registerQuestion": "Vous n'avez pas de compte ? Inscrivez-vous",
+  "loginQuestion": "Vous avez déjà un compte ? Connectez-vous",
+  "details": {
+    "title": "Vos informations",
+    "name": "Nom",
+    "phone": "Numéro de téléphone"
+  }
 }

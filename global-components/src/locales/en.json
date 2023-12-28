@@ -6,16 +6,32 @@
   "logout": "Logout",
   "routes": {
     "home": "Home",
+    "login": "Login",
+    "register": "Register",
     "components": "Components"
   },
   "cancel": "Cancel",
   "proceed": "Proceed",
-  "ok": "ok",
+  "ok": "OK",
   "show": "Show",
   "popup": "Popup",
   "regularPopup": "Regular Popup",
   "sweetalertPopup": "Sweetalert Popup",
   "confirmationQuestion": "Are you sure?",
   "deleted": "Deleted",
-  "deletedFileMessage": "Your file has been deleted."
+  "deletedFileMessage": "Your file has been deleted.",
+  "username": "Username",
+  "password": "Password",
+  "phone": "Telephone",
+  "usernameLengthMessage": "Username must be less than 12 characters",
+  "passwordLengthMessage": "Password must be less than 40 characters",
+  "fieldRequired": "This field is required",
+  "phoneIncorrectMessage": "The phone number is incorrect",
+  "registerQuestion": "Don't have an account? register",
+  "loginQuestion": "Already have an account? log in",
+  "details": {
+    "title": "Your informations",
+    "name": "Name",
+    "phone": "Phone number"
+  }
 }

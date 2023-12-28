@@ -24,3 +24,5 @@ export default new Vuex.Store({
   },
   modules: {}
 })
+
+// export default Store;
