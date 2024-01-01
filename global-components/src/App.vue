@@ -46,10 +46,15 @@ export default {
 
 <style>
 :root {
- --swal-direction: ltr;
+  --swal-direction: ltr;
 }
 
 .swal2-container {
- direction: var(--swal-direction);
+  direction: var(--swal-direction);
 }
+
+.swal2-modal {
+  font-family: "roboto", sans-serif;
+}
+
 </style>

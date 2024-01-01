@@ -15,12 +15,14 @@
                 :rules="[requiredFieldRule, usernameLengthRules, alphanumericRule('username'), oneLetterRule('username')].flat()"
                 :label="$t('username')"
                 required
+                prepend-inner-icon="mdi-account-outline"
               ></v-text-field>
               <v-text-field
                 v-model="userDetails.phone"
                 :rules="[requiredFieldRule, phoneRules].flat()"
                 :label="$t('phone')"
                 required
+                prepend-inner-icon="mdi-cellphone"
               ></v-text-field>
               <v-text-field
                 v-model="userDetails.password"
@@ -30,6 +32,7 @@
                 :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="showPassword = !showPassword"
                 :type="showPassword ? 'text' : 'password'"
+                prepend-inner-icon="mdi-lock-outline"
               ></v-text-field>
               <v-card-actions>
                 <v-row>

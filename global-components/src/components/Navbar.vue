@@ -66,7 +66,7 @@ export default {
       });
       this.$swal.fire({
         title: this.$t("details.title"),
-        html: '<pre>' + details + '</pre>',
+        html: '<pre class="swal2-modal">' + details + '</pre>',
         icon: "info",
         confirmButtonText: this.$t("ok"),
       });

@@ -58,6 +58,7 @@
                 :rules="[requiredFieldRule, usernameLengthRules].flat()"
                 :label="$t('username')"
                 required
+                prepend-inner-icon="mdi-account-outline"
               ></v-text-field>
               <v-text-field
                 v-model="password"
@@ -67,6 +68,7 @@
                 :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="showPassword = !showPassword"
                 :type="showPassword ? 'text' : 'password'"
+                prepend-inner-icon="mdi-lock-outline"
               ></v-text-field>
               <v-card-actions>
                 <v-row>
