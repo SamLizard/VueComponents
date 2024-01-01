@@ -55,13 +55,13 @@
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
                 v-model="username"
-                :rules="usernameRules"
+                :rules="[requiredFieldRule, usernameLengthRules].flat()"
                 :label="$t('username')"
                 required
               ></v-text-field>
               <v-text-field
                 v-model="password"
-                :rules="passwordRules"
+                :rules="[requiredFieldRule, passwordLengthRules].flat()"
                 :label="$t('password')"
                 required
                 :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -101,7 +101,7 @@
 
 <script>
 import { login } from "../DL/DL.js";
-import validationRulesMixin from '../mixins/validationRulesMixin.js';
+import validationRulesMixin from "../mixins/validationRulesMixin.js";
 
 export default {
   name: "LoginView",
@@ -125,7 +125,7 @@ export default {
       const personalDetails = await login(this.username, this.password);
       if (Object.keys(personalDetails).length > 0) {
         this.$store.dispatch("changeUserId", this.username);
-        this.$emit('connected', personalDetails);
+        this.$emit("connected", personalDetails);
         this.$router.push("home");
       } else {
         this.$swal.fire({
@@ -134,6 +134,13 @@ export default {
           showCloseButton: true,
           confirmButtonText: this.$t("ok"),
         });
+      }
+    },
+  },
+  watch: {
+    "$i18n.locale": function (newVal, oldVal) {
+      if (Object.entries(this.$refs.form.errorBag).length > 0) {
+        this.$refs.form.validate();
       }
     },
   },
@@ -152,5 +159,4 @@ export default {
   font-size: 0.8rem;
   text-transform: none;
 }
-
 </style>

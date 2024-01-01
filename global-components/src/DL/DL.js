@@ -7,7 +7,7 @@ const login = async (username, password) => {
   return personalDetails;
 }
 
-const register = async (username, password, tel) => {
+const register = async (username, password, phone) => {
   const personalDetails = {
     name: "Sam",
     phone: "067666666",

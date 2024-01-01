@@ -20,12 +20,17 @@
   "confirmationQuestion": "Êtes vous sûrs?",
   "deleted": "Supprimé",
   "deletedFileMessage": "Votre fichier a été supprimé.",
+  "field": {
+    "default": "Ce champ",
+    "username": "Le nom d'utilisateur",
+    "password": "Le mot de passe"
+  },
   "username": "Nom d'utilisateur",
   "password": "Mot de passe",
   "phone": "Téléphone",
-  "usernameLengthMessage": "Le nom d'utilisateur doit contenir moins de 12 caractères",
-  "passwordLengthMessage": "Le mot de passe doit contenir moins de 40 caractères",
-  "fieldRequired": "Ce champ est obligatoir",
+  "usernameLengthMessage": "Le nom d'utilisateur doit contenir entre 3 et 16 caractères",
+  "passwordLengthMessage": "Le mot de passe doit contenir entre 8 et 64 caractères",
+  "fieldRequired": "Ce champ est obligatoire",
   "phoneIncorrectMessage": "Le numéro de téléphone est incorrect",
   "registerQuestion": "Vous n'avez pas de compte ? Inscrivez-vous",
   "loginQuestion": "Vous avez déjà un compte ? Connectez-vous",
@@ -33,5 +38,11 @@
     "title": "Vos informations",
     "name": "Nom",
     "phone": "Numéro de téléphone"
-  }
+  },
+  "noAlphanumericMessage": "{fieldName} doit être alphanumérique",
+  "noLetterMessage": "{fieldName} doit contenir au moins une lettre",
+  "noUpperCaseMessage": "{fieldName} doit contenir au moins une lettre majuscule",
+  "noLowerCaseMessage": "{fieldName} doit contenir au moins une lettre minuscule",
+  "noDigitMessage": "{fieldName} doit contenir au moins un chiffre",
+  "noSpecialCharMessage": "{fieldName} doit contenir au moins un caractère spécial"
 }

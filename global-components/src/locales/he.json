@@ -20,11 +20,16 @@
   "confirmationQuestion": "אתה בטוח?",
   "deleted": "נמחק",
   "deletedFileMessage": "הקובץ שלך נמחק.",
+  "field": {
+    "default": "השדה",
+    "username": "שם המשתמש",
+    "password": "הסיסמה"
+  },
   "username": "שם משתמש",
   "password": "סיסמה",
   "phone": "טלפון",
-  "usernameLengthMessage": "שם המשתמש חייב להיות פחות מ-12 תווים",
-  "passwordLengthMessage": "הסיסמה חייבת להיות פחות מ-40 תווים",
+  "usernameLengthMessage": "שם המשתמש צריך להכיל בין 3 ל-16 תווים",
+  "passwordLengthMessage": "הסיסמה צריכה להכיל בין 8 ל-64 תווים",
   "fieldRequired": "שדה זה נדרש",
   "phoneIncorrectMessage": "מספר הטלפון שגוי",
   "registerQuestion": "אין לך חשבון? הרשם",
@@ -33,5 +38,11 @@
     "title": "המידע שלך",
     "name": "שם",
     "phone": "מספר טלפון"
-  }
+  },
+  "noAlphanumericMessage": "{fieldName} צריך להיות אלפאנומרי",
+  "noLetterMessage": "{fieldName} צריך להכיל לפחות אות אחת",
+  "noUpperCaseMessage": "{fieldName} צריכה להכיל לפחות אות גדולה אחת",
+  "noLowerCaseMessage": "{fieldName} צריכה להכיל לפחות אות קטנה אחת",
+  "noDigitMessage": "{fieldName} צריכה להכיל לפחות ספרה אחת",
+  "noSpecialCharMessage": "{fieldName} צריכה להכיל לפחות תו מיוחד אחד"
 }

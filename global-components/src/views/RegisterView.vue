@@ -6,25 +6,25 @@
           <v-toolbar color="primary" dark flat>
             <v-toolbar-title>{{ $t("routes.register") }}</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-icon>mdi-login</v-icon>
+            <v-icon>mdi-account-plus</v-icon>
           </v-toolbar>
           <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
                 v-model="userDetails.username"
-                :rules="usernameRules"
+                :rules="[requiredFieldRule, usernameLengthRules, alphanumericRule('username'), oneLetterRule('username')].flat()"
                 :label="$t('username')"
                 required
               ></v-text-field>
               <v-text-field
                 v-model="userDetails.phone"
-                :rules="phoneRules"
+                :rules="[requiredFieldRule, phoneRules].flat()"
                 :label="$t('phone')"
                 required
               ></v-text-field>
               <v-text-field
                 v-model="userDetails.password"
-                :rules="passwordRules"
+                :rules="[requiredFieldRule, passwordLengthRules, uppercaseRule('password'), lowercaseRule('password'), digitRule('password'), specialCharRule('password')].flat()"
                 :label="$t('password')"
                 required
                 :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -75,10 +75,6 @@ export default {
       userDetails: { username: "", password: "", phone: "" },
       showPassword: false,
       valid: false,
-      phoneRules: [
-        (v) => !!v || this.$t("fieldRequired"),
-        (v) => (v && /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(v)) || this.$t("phoneIncorrectMessage"),
-      ],
     };
   },
   methods: {
@@ -100,6 +96,13 @@ export default {
           showCloseButton: true,
           confirmButtonText: this.$t("ok"),
         });
+      }
+    },
+  },
+  watch: {
+    "$i18n.locale": function (newVal, oldVal) {
+      if (Object.entries(this.$refs.form.errorBag).length > 0) {
+        this.$refs.form.validate();
       }
     },
   },
