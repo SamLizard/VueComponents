@@ -131,6 +131,7 @@ export default {
 
 .language-selection {
   max-width: 200px;
+  margin-left: auto;
 }
 
 button {
