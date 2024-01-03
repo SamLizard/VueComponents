@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- <v-container>
-    <v-row>
-      <v-col cols="12" lg="6"> -->
     <v-menu
       v-model="menu"
       :close-on-content-click="false"
@@ -13,47 +10,34 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
-          v-model="date"
-          :label="label"
-          :placeholder="placeholder"
+          v-bind="[$attrs, attrs]"
           append-icon="mdi-calendar"
           readonly
-          v-bind="attrs"
           v-on="on"
           :value="computedDateFormatted"
-          :disabled="disabled"
-          :color="color"
-          :background-color="bgColor"
           :rounded="rounded"
           :dense="dense"
-          :solo="solo"
           :outlined="outlined"
-          :filled="filled"
-          :rules="rules"
           hide-details="auto"
         >
           <template v-if="iconColor !== undefined" v-slot:append>
             <v-icon :color="iconColor">event</v-icon>
           </template>
         </v-text-field>
-        <!-- hint="MM/DD/YYYY format"
-              persistent-hint -->
       </template>
       <v-date-picker
         v-model="date"
-        @input="menu = false"
+        @input="close"
         no-title
         :locale="language"
         :first-day-of-week="languageFirstDayOfWeek"
         :min="min"
         :max="max"
         :allowed-dates="allowedDates"
+        :show-adjacent-months="showAdjacentMonths"
       ></v-date-picker>
     </v-menu>
   </div>
-  <!-- </v-col>
-    </v-row>
-  </v-container> -->
 </template>
 
 <script>
@@ -65,28 +49,23 @@ const languageSettings = {
 
 export default {
   name: "DatePicker",
-  components: {},
+  inheritAttrs: false,
   props: {
-    disabled: {
-      type: Boolean,
-      default: false,
+    value: {
+      type: String,
+      default: new Date().toISOString().substring(0, 10),
     },
     language: {
       type: String,
       default: "en",
     },
+    showAdjacentMonths: {
+      type: Boolean,
+      default: true,
+    },
     iconColor: {
       type: String,
-      required: "false"
-    },
-    color: {
-      type: String,
       required: false,
-    },
-    bgColor: {
-      type: String,
-      required: false,
-      // default: "warning",
     },
     rounded: {
       type: Boolean,
@@ -100,26 +79,10 @@ export default {
       type: Boolean,
       default: true,
     },
-    solo: {
-      type: Boolean,
-      default: false,
-    },
-    filled: {
-      type: Boolean,
-      default: false,
-    },
-    label: {
-      type: String,
-      required: false,
-    },
-    placeholder: {
-      type: String,
-      required: false,
-    },
     min: {
       type: String,
       required: false,
-      // default: (new Date()).toISOString().substr(0, 10)
+      // default: (new Date()).toISOString().substring(0, 10)
     },
     max: {
       type: String,
@@ -130,14 +93,10 @@ export default {
       type: Function,
       required: false,
     },
-    rules: {
-      type: Array,
-      required: false,
-    },
   },
   data() {
     return {
-      date: new Date().toISOString().substr(0, 10),
+      date: new Date().toISOString().substring(0, 10),
       dateFormatted: Date,
       menu: false,
     };
@@ -147,15 +106,16 @@ export default {
       return this.formatDate(this.date);
     },
     languageFirstDayOfWeek() {
-      return languageSettings[this.language] === undefined
-        ? 0
-        : languageSettings[this.language];
+      return languageSettings[this.language] ?? 0; // take it from i18n
     },
   },
   watch: {
-    date(val) {
-      this.date = val;
-      this.dateFormatted = this.formatDate(this.date);
+    value: {
+      immediate: true,
+      handler(newVal) {
+        this.date = newVal;
+        this.dateFormatted = this.formatDate(this.date);
+      },
     },
   },
   methods: {
@@ -163,13 +123,17 @@ export default {
       if (!date) return null;
 
       const [year, month, day] = date.split("-");
-      return `${month}/${day}/${year}`;
+      return `${day}/${month}/${year}`;
     },
     parseDate(date) {
       if (!date) return null;
 
-      const [month, day, year] = date.split("/");
+      const [day, month, year] = date.split("/");
       return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+    },
+    close() {
+      this.$emit("input", this.date);
+      this.menu = false;
     },
   },
 };

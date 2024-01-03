@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -12,6 +13,8 @@
     "moment": "^2.29.4",
     "sweetalert2": "^11.10.1",
     "vue": "^2.6.14",
+    "vue-i18n": "^8.26.3",
+    "vue-i18n-bridge": "^9.2.0-beta.10",
     "vue-material-design-icons": "^5.2.0",
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.0",
@@ -19,6 +22,7 @@
     "webpack": "^5.89.0"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^3.2.0",
     "@mdi/font": "^7.3.67",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
@@ -26,6 +30,7 @@
     "@vue/cli-service": "~5.0.0",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
+    "vue-cli-plugin-i18n": "~2.3.2",
     "vue-cli-plugin-vuetify": "~2.5.8",
     "vue-template-compiler": "^2.6.14",
     "vuetify-loader": "^1.7.0"

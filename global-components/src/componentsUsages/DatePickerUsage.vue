@@ -5,8 +5,9 @@
         <date-picker
           v-model="date"
           :allowedDates="isAllowedDate"
-          :rules="testRules"
+          :rules="requiredRules"
           iconColor="#53A5EB"
+          :language="this.$i18n.locale"
         />
       </v-col>
     </v-row>
@@ -25,8 +26,8 @@ export default {
   },
   data() {
     return {
-      date: new Date(),
-      testRules: [(v) => !!v || "required"],
+      date: new Date().toISOString().substring(0, 10),
+      requiredRules: [(v) => !!v || "required"],
     };
   },
   methods: {
@@ -37,6 +38,5 @@ export default {
       return Object.values(allowedDaysInWeek).includes(dayOfWeek);
     },
   },
-  computed: {},
 };
 </script>
