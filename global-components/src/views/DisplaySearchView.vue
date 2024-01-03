@@ -1,6 +1,7 @@
 <template>
   <div align="center" class="mt-8">
     <user-filter @filter="updatefilters"></user-filter>
+    <v-progress-linear indeterminate color="primary" v-if="loadingItems" />
     <v-data-table
       :headers="headers"
       :items="filteredItems"
@@ -8,6 +9,7 @@
       disable-pagination
       class="itemTable component"
       :key="$i18n.locale"
+      v-else
     >
       <template
         v-for="header in headers"
@@ -16,9 +18,22 @@
         <span>{{ $t(header.text) }}</span>
       </template>
       <template v-slot:[`item.actions`]="{ item }">
-        <v-icon @click="deleteItem(item)" class="me-2" :title="$t('cancel')">
+        <v-progress-circular
+          indeterminate
+          color="primary"
+          v-if="deletingItem === item.id"
+        />
+        <v-icon
+          @click="deleteItem(item)"
+          class="me-2"
+          :title="$t('cancel')"
+          v-else
+        >
           delete
         </v-icon>
+        <!-- <v-icon @click="deleteItem(item)" class="me-2" :title="$t('cancel')">
+          delete
+        </v-icon> -->
       </template>
       <template v-slot:[`item.itemDate`]="{ item }">
         <tr>
@@ -45,6 +60,8 @@ export default {
       items: [],
       headers: [],
       currentTimePrecision: null,
+      loadingItems: true,
+      deletingItem: null,
       filters: {
         startDate: "",
         endDate: "",
@@ -65,12 +82,14 @@ export default {
         itemDate: this.parseDate(item.itemDate),
       }));
       this.filteredItems = this.items;
+      this.loadingItems = false;
     } catch (err) {
       this.$swal.fire({
         icon: "error",
         title: err.message,
         confirmButtonText: this.$t("ok"),
       });
+      this.loadingItems = false;
     }
   },
   methods: {
@@ -151,6 +170,7 @@ export default {
       }
     },
     async deleteItem(item) {
+      this.deletingItem = item.id;
       try {
         const deleted = await deleteItem(item.itemDate, item.itemTime, item.id);
         if (deleted) {
@@ -172,6 +192,8 @@ export default {
           title: err.message,
           confirmButtonText: this.$t("ok"),
         });
+      } finally {
+        this.deletingItem = null;
       }
     },
     parseDate(dateStr) {
