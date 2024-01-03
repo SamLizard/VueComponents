@@ -63,10 +63,10 @@ export default {
       loadingItems: true,
       deletingItem: null,
       filters: {
-        startDate: "",
-        endDate: "",
-        startTime: "00:00",
-        endTime: "23:59",
+        startDate: "0000-01-01",
+        endDate: "9999-12-31",
+        startTime: "00:00:00.0000",
+        endTime: "23:59:59.9999",
       },
       filteredItems: [],
     };
