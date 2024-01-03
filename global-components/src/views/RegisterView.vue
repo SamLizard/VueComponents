@@ -89,7 +89,7 @@ export default {
     async register() {
       const personalDetails = await register(this.userDetails.username, this.userDetails.password, this.userDetails.phone);
       if (Object.keys(personalDetails).length > 0) {
-        this.$store.dispatch("changeUserId", this.username);
+        this.$store.dispatch("changeUserId", this.userDetails.username);
         this.$emit('connected', personalDetails);
         this.$router.push("home");
       } else {

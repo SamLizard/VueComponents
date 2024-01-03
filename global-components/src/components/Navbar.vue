@@ -15,6 +15,7 @@
           {{ $t("routes." + route.name) }}
         </v-btn>
       </div>
+      <!-- <div class="flex-grow-1 flex-shrink-0" style="flex-basis: 0%" /> -->
       <div class="user-info">
         <div v-if="isLoggedIn" class="user">
           <v-icon>person</v-icon>
@@ -23,7 +24,7 @@
         <div v-if="isLoggedIn" class="information">
           <v-icon @click="showUserInfo">info</v-icon>
         </div>
-        <language-selection class="language-selection" />
+        <language-selection class="language-selection" :class="isLoggedIn ? '' : this.$vuetify.rtl ? 'rtl' : 'ltr'" />
         <div v-if="isLoggedIn" class="logout" @click="$emit('logout')">
           <v-icon :title="$t('logout')">input</v-icon>
         </div>
@@ -119,6 +120,15 @@ export default {
 .language-selection {
   display: flex;
   align-items: center;
+  max-width: 200px;
+}
+
+.language-selection.ltr {
+  margin-left: auto;
+}
+
+.language-selection.rtl {
+  margin-right: auto;
 }
 
 .user {
@@ -127,11 +137,6 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.language-selection {
-  max-width: 200px;
-  margin-left: auto;
 }
 
 button {

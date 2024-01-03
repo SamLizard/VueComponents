@@ -52,7 +52,7 @@ export default {
           if (result.isConfirmed) {
             this.$swal.fire({
               title: this.$t("deleted") + "!",
-              text: this.$t("deletedFileMessage"),
+              text: this.$t("deletedItemMessage", {itemName: this.$t("item.file")}),
               icon: "success",
               confirmButtonText: this.$t("ok"),
             });

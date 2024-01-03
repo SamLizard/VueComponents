@@ -8,7 +8,8 @@
     "home": "בית",
     "login": "התחברות",
     "register": "הרשמה",
-    "components": "קומפוננטות"
+    "components": "קומפוננטות",
+    "displaySearch": "הפריטים שלי"
   },
   "cancel": "ביטול",
   "proceed": "המשך",
@@ -19,7 +20,12 @@
   "sweetalertPopup": "Sweetalert פופאפ",
   "confirmationQuestion": "אתה בטוח?",
   "deleted": "נמחק",
-  "deletedFileMessage": "הקובץ שלך נמחק.",
+  "deletedItemMessage": "ה{itemName} שלך נמחק.",
+  "item": {
+    "default": "פריט",
+    "item": "פריט",
+    "file": "קובץ"
+  },
   "field": {
     "default": "השדה",
     "username": "שם המשתמש",
@@ -44,5 +50,11 @@
   "noUpperCaseMessage": "{fieldName} צריכה להכיל לפחות אות גדולה אחת",
   "noLowerCaseMessage": "{fieldName} צריכה להכיל לפחות אות קטנה אחת",
   "noDigitMessage": "{fieldName} צריכה להכיל לפחות ספרה אחת",
-  "noSpecialCharMessage": "{fieldName} צריכה להכיל לפחות תו מיוחד אחד"
+  "noSpecialCharMessage": "{fieldName} צריכה להכיל לפחות תו מיוחד אחד",
+  "date": "תאריך",
+  "time": "זמן",
+  "from": "מאת",
+  "to": "אל",
+  "filter": "סינון",
+  "filterTitle": "סינון פריטים"
 }

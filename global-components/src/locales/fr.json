@@ -8,7 +8,8 @@
     "home": "Accueil",
     "login": "Connection",
     "register": "Inscription",
-    "components": "Composantes"
+    "components": "Composantes",
+    "displaySearch": "Mes éléments"
   },
   "cancel": "Annuler",
   "proceed": "Procéder",
@@ -19,7 +20,12 @@
   "sweetalertPopup": "Popup Sweetalert",
   "confirmationQuestion": "Êtes vous sûrs?",
   "deleted": "Supprimé",
-  "deletedFileMessage": "Votre fichier a été supprimé.",
+  "deletedItemMessage": "Votre {itemName} a été supprimé.",
+  "item": {
+    "default": "élément",
+    "item": "élément",
+    "file": "fichier"
+  },
   "field": {
     "default": "Ce champ",
     "username": "Le nom d'utilisateur",
@@ -44,5 +50,11 @@
   "noUpperCaseMessage": "{fieldName} doit contenir au moins une lettre majuscule",
   "noLowerCaseMessage": "{fieldName} doit contenir au moins une lettre minuscule",
   "noDigitMessage": "{fieldName} doit contenir au moins un chiffre",
-  "noSpecialCharMessage": "{fieldName} doit contenir au moins un caractère spécial"
+  "noSpecialCharMessage": "{fieldName} doit contenir au moins un caractère spécial",
+  "date": "Date",
+  "time": "Temps",
+  "from": "De",
+  "to": "À",
+  "filter": "Filtrer",
+  "filterTitle": "Filtrer les éléments"
 }

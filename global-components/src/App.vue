@@ -57,4 +57,10 @@ export default {
   font-family: "roboto", sans-serif;
 }
 
+.component {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 6px 3px 13px 0px #aaaaaaa1;
+}
+
 </style>

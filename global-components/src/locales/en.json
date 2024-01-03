@@ -8,7 +8,8 @@
     "home": "Home",
     "login": "Login",
     "register": "Register",
-    "components": "Components"
+    "components": "Components",
+    "displaySearch": "My items"
   },
   "cancel": "Cancel",
   "proceed": "Proceed",
@@ -19,7 +20,12 @@
   "sweetalertPopup": "Sweetalert Popup",
   "confirmationQuestion": "Are you sure?",
   "deleted": "Deleted",
-  "deletedFileMessage": "Your file has been deleted.",
+  "deletedItemMessage": "Your {itemName} has been deleted.",
+  "item": {
+    "default": "item",
+    "item": "item",
+    "file": "file"
+  },
   "field": {
     "default": "The field",
     "username": "Username",
@@ -44,5 +50,11 @@
   "noUpperCaseMessage": "{fieldName} should contain at least one uppercase letter",
   "noLowerCaseMessage": "{fieldName} should contain at least one lowercase letter",
   "noDigitMessage": "{fieldName} should contain at least one digit",
-  "noSpecialCharMessage": "{fieldName} should contain at least one special character"
+  "noSpecialCharMessage": "{fieldName} should contain at least one special character",
+  "date": "Date",
+  "time": "Time",
+  "from": "From",
+  "to": "To",
+  "filter": "Filter",
+  "filterTitle": "Filter Items"
 }

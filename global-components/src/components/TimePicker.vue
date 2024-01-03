@@ -115,8 +115,8 @@ export default {
     },
     allowedMinutes(value) {
       return this.authorizedMinutes.includes(value) && 
-            (this.value.substring(0, 2) < this.max.substring(0, 2) || value <= this.max.substring(3, 5)) &&
-            (this.value.substring(0, 2) > this.min.substring(0, 2) || value >= this.min.substring(3, 5))
+            (this.time.substring(0, 2) < this.max.substring(0, 2) || value <= this.max.substring(3, 5)) &&
+            (this.time.substring(0, 2) > this.min.substring(0, 2) || value >= this.min.substring(3, 5))
     },
   },
   computed: {

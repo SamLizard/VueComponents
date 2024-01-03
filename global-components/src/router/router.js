@@ -5,6 +5,7 @@ import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import ComponentsView from '../views/ComponentsView.vue';
+import DisplaySearchView from '../views/DisplaySearchView.vue';
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/components',
     name: 'components',
     component: ComponentsView
+  },
+  {
+    path: '/displaySearch',
+    name: 'displaySearch',
+    component: DisplaySearchView
   },
 ]
 
