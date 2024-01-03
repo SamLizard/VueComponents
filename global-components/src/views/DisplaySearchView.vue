@@ -31,9 +31,6 @@
         >
           delete
         </v-icon>
-        <!-- <v-icon @click="deleteItem(item)" class="me-2" :title="$t('cancel')">
-          delete
-        </v-icon> -->
       </template>
       <template v-slot:[`item.itemDate`]="{ item }">
         <tr>
@@ -107,14 +104,10 @@ export default {
     filter() {
       this.filteredItems = this.items.filter((item) => {
         return (
-          item.itemDate.toISOString().substring(0, 10) >=
-            this.filters.startDate &&
-          item.itemDate.toISOString().substring(0, 10) <=
-            this.filters.endDate &&
-          this.timeToMillis(item.itemTime) >=
-            this.timeToMillis(this.filters.startTime) &&
-          this.timeToMillis(item.itemTime) <=
-            this.timeToMillis(this.filters.endTime)
+          item.itemDate.toISOString().substring(0, 10) >= this.filters.startDate &&
+          item.itemDate.toISOString().substring(0, 10) <= this.filters.endDate &&
+          this.timeToMillis(item.itemTime) >= this.timeToMillis(this.filters.startTime) &&
+          this.timeToMillis(item.itemTime) <= this.timeToMillis(this.filters.endTime)
         );
       });
     },
@@ -212,7 +205,6 @@ export default {
       return hours * 3600000 + minutes * 60000 + seconds * 1000 + milliseconds;
     },
   },
-  computed: {},
 };
 </script>
 <style scoped>

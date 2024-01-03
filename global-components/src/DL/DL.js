@@ -1,4 +1,4 @@
-const delay = (time) => {
+const delay = (time=1000) => {
   return new Promise(resolve => setTimeout(resolve, time));
 }
 
@@ -8,7 +8,7 @@ const login = async (username, password) => {
     phone: "065666666",
   };
 
-  await delay(1000);
+  await delay();
   
   return personalDetails;
 }
@@ -19,7 +19,7 @@ const register = async (username, password, phone) => {
     phone: "067666666",
   };
   
-  await delay(1000);
+  await delay();
   
   return personalDetails;
 }
@@ -29,13 +29,13 @@ const getItems = async () => {
   { itemDate: "24.12.2023", itemTime: "11:10:00.0001", id: "1" },
   { itemDate: "01.01.2024", itemTime: "15:45:00", id: "2" }];
   
-  await delay(1000);
+  await delay();
   
   return items;
 }
 
 const deleteItem = async (date, time, id) => {
-  await delay(1000);
+  await delay();
   
   return true;
 }
