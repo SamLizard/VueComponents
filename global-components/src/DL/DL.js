@@ -1,9 +1,15 @@
+const delay = (time) => {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
 const login = async (username, password) => {
   const personalDetails = {
     name: "Sam",
     phone: "065666666",
   };
 
+  await delay(1000);
+  
   return personalDetails;
 }
 
@@ -12,7 +18,9 @@ const register = async (username, password, phone) => {
     name: "Sam",
     phone: "067666666",
   };
-
+  
+  await delay(1000);
+  
   return personalDetails;
 }
 

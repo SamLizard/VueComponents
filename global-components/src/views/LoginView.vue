@@ -78,8 +78,9 @@
                       :disabled="!valid"
                       color="primary"
                       @click="submitForm"
-                      >{{ $t("routes.login") }}</v-btn
-                    >
+                      :loading="loading">
+                      {{ $t("routes.login") }}
+                    </v-btn>
                   </v-col>
                   <v-col cols="12">
                     <v-btn
@@ -115,12 +116,24 @@ export default {
       password: "",
       showPassword: false,
       valid: false,
+      loading: false,
     };
   },
   methods: {
+    // async submitForm() {
+    //   if (this.$refs.form.validate()) {
+    //     await this.checkLogin();
+    //   }
+    // },
     async submitForm() {
       if (this.$refs.form.validate()) {
-        await this.checkLogin();
+        this.loading = false;
+        const loginRequest = this.checkLogin();
+        const timeout = new Promise((resolve) => setTimeout(resolve, 100));
+        const result = await Promise.race([loginRequest, timeout]);
+        if (!result) {
+          this.loading = true;
+        }
       }
     },
     async checkLogin() {

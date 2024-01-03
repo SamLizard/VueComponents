@@ -42,8 +42,9 @@
                       :disabled="!valid"
                       color="primary"
                       @click="submitForm"
-                      >{{ $t("routes.register") }}</v-btn
-                    >
+                      :loading="loading">
+                      {{ $t("routes.register") }}
+                    </v-btn>
                   </v-col>
                   <v-col cols="12">
                     <v-btn
@@ -78,12 +79,19 @@ export default {
       userDetails: { username: "", password: "", phone: "" },
       showPassword: false,
       valid: false,
+      loading: false,
     };
   },
   methods: {
     async submitForm() {
       if (this.$refs.form.validate()) {
-        await this.register();
+        this.loading = false;
+        const loginRequest = this.register();
+        const timeout = new Promise((resolve) => setTimeout(resolve, 100));
+        const result = await Promise.race([loginRequest, timeout]);
+        if (!result) {
+          this.loading = true;
+        }
       }
     },
     async register() {
