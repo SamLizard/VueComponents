@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { getItems, deleteItem } from "../DL/DL.js";
+import { getItems, deleteItem } from "../DL/DL";
 import UserFilter from "../components/UserFilter.vue";
 
 const dateFormatOptions = { year: "numeric", month: "numeric", day: "numeric" };

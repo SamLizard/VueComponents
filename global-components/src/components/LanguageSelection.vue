@@ -35,7 +35,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+interface LocaleItem {
+ lang: string;
+ text: string;
+}
+
 export default {
   name: "LanguageSelection",
   data() {
@@ -43,9 +48,9 @@ export default {
   },
   methods: {},
   computed: {
-    otherLocales() {
+    otherLocales(): LocaleItem[] {
       return Object.keys(this.$i18n.messages).map((lang) => {
-        return { lang: lang, text: this.$t("language", lang) };
+        return { lang: lang, text: this.$t("language", lang) as string };
       });
     },
   },

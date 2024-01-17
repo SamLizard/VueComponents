@@ -45,7 +45,7 @@ router.push('/login');
 
 const allowedRoutes = ['home', 'login', 'register'];
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to: any, from: any, next) => {
   if (store.state.userId === undefined && !allowedRoutes.includes(to.name)) {
     return next(from);
   }

@@ -103,8 +103,8 @@
 </template>
 
 <script>
-import { login } from "../DL/DL.js";
-import validationRulesMixin from "../mixins/validationRulesMixin.js";
+import { login } from "../DL/DL";
+import validationRulesMixin from "../mixins/validationRulesMixin";
 
 export default {
   name: "LoginView",

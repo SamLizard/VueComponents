@@ -4,6 +4,9 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "types": [
+      "vue-i18n"
+    ],
     "paths": {
       "@/*": [
         "src/*"

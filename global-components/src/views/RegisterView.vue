@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { register } from "../DL/DL.js";
+import { register } from "../DL/DL";
 import validationRulesMixin from '../mixins/validationRulesMixin';
 
 export default {
