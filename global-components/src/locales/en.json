@@ -56,5 +56,7 @@
   "from": "From",
   "to": "To",
   "filter": "Filter",
-  "filterTitle": "Filter Items"
+  "filterTitle": "Filter Items",
+  "loginFailed": "Login failed. Please check your credentials and try again.",
+  "registerFailed": "Registration failed. Please try again later."
 }
